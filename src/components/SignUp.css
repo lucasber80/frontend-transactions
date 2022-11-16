@@ -1,0 +1,49 @@
+.content-box {
+  height: 500px;
+  width: 400px;
+  border-radius: 20px;
+  background-color: white;
+}
+
+.input-box {
+  width: 260px;
+  margin-top: 40px;
+}
+.input-box input {
+  outline: 0;
+  border-width: 0 0 2px;
+}
+.input-box input:focus {
+  border-color: black;
+}
+
+.input-box label {
+  font-weight: 500;
+  font-size: small;
+  margin-bottom: 1px;
+}
+
+.title {
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.button-box {
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  width: 100px;
+  height: 45px;
+}
+
+.button-row {
+  width: 260px;
+  margin-top: 50px;
+}
+
+.error-msg{
+    font-size: smaller;
+    color: red;
+    margin-top: 4px;
+    height: 6px;
+}
