@@ -1,17 +1,22 @@
 .content-box {
   height: 500px;
-  width: 400px;
+  width: 450px;
   border-radius: 20px;
   background-color: white;
 }
 
+.title{
+  width: 370px;
+}
+
 .input-box {
-  width: 260px;
+  width: 370px;
   margin-top: 40px;
 }
 .input-box input {
   outline: 0;
   border-width: 0 0 2px;
+
 }
 .input-box input:focus {
   border-color: black;
@@ -23,17 +28,22 @@
   margin-bottom: 1px;
 }
 
-.title {
+.title span{
   font-size: x-large;
   font-weight: bold;
+
 }
+
+
 
 .button-box {
   background-color: black;
   color: white;
   border-radius: 5px;
-  width: 100px;
-  height: 45px;
+  width: 150px;
+  height: 50px;
+  margin-top: 40px;
+  border-radius: 25px;
 }
 
 .button-row {

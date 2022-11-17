@@ -1,5 +1,11 @@
 
 .content {
   background-color: black;
-  height: "100vh"
+  height: "100vh";
+
+}
+
+.logo{
+  width: 700px;
+  height: 250px;
 }
