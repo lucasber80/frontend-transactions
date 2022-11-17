@@ -43,7 +43,7 @@
   width: 150px;
   height: 50px;
   margin-top: 40px;
-  border-radius: 25px;
+  border-radius: 10px;
 }
 
 .button-row {
@@ -56,4 +56,23 @@
     color: red;
     margin-top: 4px;
     height: 6px;
+}
+
+
+.sucess-msg{
+    font-size: smaller;
+    color: lightgreen;
+    margin-top: 4px;
+    height: 6px;
+}
+
+
+.icon-button{
+  background-color: transparent;
+  color: black;
+  border: none;
+}
+
+.icon-button i{
+  font-size: 30px;
 }

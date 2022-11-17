@@ -7,6 +7,8 @@ function SignUp() {
   const [password, Setpassword] = useState("");
   const [confirmPassword, SetconfirmPassword] = useState("");
   const [emailMsg, SetEmailMsg] = useState("");
+  const [errorMsg, SetErrorMsg] = useState("");
+  const [sucessMsg, SetSucessMsg] = useState("");
   const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
   function cadastrar(e) {
@@ -18,29 +20,36 @@ function SignUp() {
       password.length >= 8
     ) {
       SetEmailMsg("");
-      SetPasswordMin("");
+      SetSucessMsg("");
+      SetErrorMsg("");
       axios
         .post("http://localhost:3333/users", {
           email: email,
           password: password,
         })
         .then(function (response) {
-          console.log(response);
+          SetSucessMsg("Conta criada com sucesso!");
         })
         .catch(function (error) {
-          if (error.response.data == "email already in use")
+          if (error.response.data == "email already in use") {
             SetEmailMsg("o e-mail já esta em uso");
+          } else {
+            SetErrorMsg("Houve um erro ao tentar realizar o login");
+          }
         });
     } else {
       if (!mailformat.test(email)) SetEmailMsg("E-mail inválido");
-      if (password.length < 8)
-        SetPasswordMin("A senha precisa ter pelo menos 8 caracteres");
     }
   }
 
   function errorPasswordMsg() {
     if (password != confirmPassword) {
       return <span>As senhas não coincidem</span>;
+    }
+  }
+  function errorPasswordMin() {
+    if (password.length < 8 && password.length > 0) {
+      return <span>A senha precisa ter pelo menos 8 caracteres</span>;
     }
   }
 
@@ -73,7 +82,7 @@ function SignUp() {
             }}
           ></input>
           <div className="d-flex flex-column error-msg">
-            <span>{passwordMin}</span>
+            {errorPasswordMin()}
           </div>
         </div>
         <div className="d-flex flex-column input-box">
@@ -86,9 +95,21 @@ function SignUp() {
             }}
           ></input>
           <div className="error-msg">{errorPasswordMsg()}</div>
+          <div className="error-msg">
+            <span>{errorMsg}</span>
+          </div>
+          <div className="sucess-msg">
+            <span>{sucessMsg}</span>
+          </div>
         </div>
-        <div className="d-flex flex-row justify-content-center">
-          <button className="button-box">Cadastrar</button>
+        <div className="d-flex flex-row justify-content-between align-items-end">
+          <a
+            className="icon-button"
+           href="/signIn"
+          >
+            <i className="bi bi-arrow-left"></i>
+          </a>
+          <button className="button-box">Cadastre-se</button>
         </div>
       </form>
     </div>
