@@ -1,14 +1,41 @@
-import "./SignUp.css";
+import "../styles/SignUp.css";
 import { useState } from "react";
-import axios from "axios";
+import axiosInstance from "../api/api";
+import { useNavigate } from "react-router-dom";
+
+
 function SignIn() {
   const [email, setEmail] = useState("");
   const [password, Setpassword] = useState("");
-  const [sucessMsg, SetSucessMsg] = useState("");
   const [errorMsg, SetErrorMsg] = useState("");
+  const nav = useNavigate();
+  
 
-  function cadastrar(e) {
+
+  function login(e) {
     e.preventDefault();
+ 
+    SetErrorMsg("");
+    axiosInstance
+      .post("session", {
+        email: email,
+        password: password,
+      })
+      .then(async function (response) {
+        let user = response.data.user;
+        let token = response.data.token.token;
+        await localStorage.setItem("token", token);
+        await localStorage.setItem("user", JSON.stringify(user));
+        nav("/home");
+      })
+      .catch(function (error) {
+        if (error.response.status == 400) {
+          SetErrorMsg("E-mail ou senha incorretos");
+        } else {
+          SetErrorMsg("Houve um erro ao realizar o login");
+        }
+        console.log(error);
+      });
   }
 
   return (
@@ -17,7 +44,7 @@ function SignIn() {
         <span>Login</span>
       </div>
 
-      <form onSubmit={cadastrar}>
+      <form onSubmit={login}>
         <div className="d-flex flex-column input-box ">
           <label>E-mail de acesso</label>
           <input
@@ -39,9 +66,9 @@ function SignIn() {
           <div className="error-msg">
             <span>{errorMsg}</span>
           </div>
-          <div className="sucess-msg">
-            <span>{sucessMsg}</span>
-          </div>
+        </div>
+        <div className="href-button">
+          <a href="/signUp">Não possui conta ainda? Cadastre-se</a>
         </div>
         <div className="d-flex flex-row justify-content-end">
           <button className="button-box">Login</button>

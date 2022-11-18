@@ -1,0 +1,63 @@
+.account-box {
+  width: 300px;
+  height: 110px;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.content-box {
+  width: 100%;
+  margin-right: 40px;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.box {
+  width: 100%;
+}
+
+.account-box i {
+  font-size: 70px;
+  margin-right: 40px;
+}
+
+.email {
+  font-size: small;
+  font-weight: 500;
+}
+
+.balance {
+  font-size: large;
+  font-weight: bold;
+}
+
+.transaction-box {
+ 
+  height: 110px;
+
+  background-color: white;
+  border-radius: 20px;
+}
+
+.transaction-title {
+  font-weight: bold;
+}
+
+.input-box {
+  width: 200px;
+}
+.input-box input {
+  outline: 0;
+  border-width: 0 0 2px;
+
+}
+
+.transaction-button{
+background-color: black;
+  color: white;
+  border-radius: 5px;
+  width: 150px;
+  height: 40px;
+  margin-top: 40px;
+  border-radius: 10px; 
+}

@@ -1,9 +1,8 @@
-import "./SignUp.css";
+import "../styles/SignUp.css";
 import { useState } from "react";
-import axios from "axios";
+import axiosInstance from "../api/api";
 function SignUp() {
   const [email, setEmail] = useState("");
-  const [passwordMin, SetPasswordMin] = useState("");
   const [password, Setpassword] = useState("");
   const [confirmPassword, SetconfirmPassword] = useState("");
   const [emailMsg, SetEmailMsg] = useState("");
@@ -13,7 +12,7 @@ function SignUp() {
 
   function cadastrar(e) {
     e.preventDefault();
-
+    
     if (
       mailformat.test(email) &&
       password == confirmPassword &&
@@ -22,12 +21,13 @@ function SignUp() {
       SetEmailMsg("");
       SetSucessMsg("");
       SetErrorMsg("");
-      axios
-        .post("http://localhost:3333/users", {
+      axiosInstance
+        .post("users", {
           email: email,
           password: password,
         })
         .then(function (response) {
+
           SetSucessMsg("Conta criada com sucesso!");
         })
         .catch(function (error) {
@@ -102,11 +102,9 @@ function SignUp() {
             <span>{sucessMsg}</span>
           </div>
         </div>
+       
         <div className="d-flex flex-row justify-content-between align-items-end">
-          <a
-            className="icon-button"
-           href="/signIn"
-          >
+          <a className="icon-button" href="/signIn">
             <i className="bi bi-arrow-left"></i>
           </a>
           <button className="button-box">Cadastre-se</button>
