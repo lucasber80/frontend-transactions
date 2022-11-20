@@ -5,8 +5,10 @@
   border-radius: 20px;
 }
 
-.content-box {
-  width: 100%;
+.content-home-box {
+  width: 900px;
+  height: 500px;
+  overflow-y: auto;
   margin-right: 40px;
   background-color: white;
   border-radius: 20px;
@@ -32,7 +34,6 @@
 }
 
 .transaction-box {
- 
   height: 110px;
 
   background-color: white;
@@ -43,21 +44,25 @@
   font-weight: bold;
 }
 
-.input-box {
+.input-home-box {
   width: 200px;
 }
-.input-box input {
+.input-home-box input {
   outline: 0;
   border-width: 0 0 2px;
-
 }
 
-.transaction-button{
-background-color: black;
+.transaction-button {
+  background-color: black;
   color: white;
   border-radius: 5px;
   width: 150px;
   height: 40px;
   margin-top: 40px;
-  border-radius: 10px; 
+  border-radius: 10px;
+}
+.input-home-box label {
+  font-weight: 500;
+  font-size: small;
+  margin-bottom: 1px;
 }

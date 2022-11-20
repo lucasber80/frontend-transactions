@@ -21,11 +21,11 @@ function SignIn() {
         email: email,
         password: password,
       })
-      .then(async function (response) {
+      .then( function (response) {
         let user = response.data.user;
         let token = response.data.token.token;
-        await localStorage.setItem("token", token);
-        await localStorage.setItem("user", JSON.stringify(user));
+         localStorage.setItem("token", token);
+         localStorage.setItem("user", JSON.stringify(user));
         nav("/home");
       })
       .catch(function (error) {

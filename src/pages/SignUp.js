@@ -12,7 +12,7 @@ function SignUp() {
 
   function cadastrar(e) {
     e.preventDefault();
-    
+
     if (
       mailformat.test(email) &&
       password == confirmPassword &&
@@ -27,7 +27,6 @@ function SignUp() {
           password: password,
         })
         .then(function (response) {
-
           SetSucessMsg("Conta criada com sucesso!");
         })
         .catch(function (error) {
@@ -102,7 +101,7 @@ function SignUp() {
             <span>{sucessMsg}</span>
           </div>
         </div>
-       
+
         <div className="d-flex flex-row justify-content-between align-items-end">
           <a className="icon-button" href="/signIn">
             <i className="bi bi-arrow-left"></i>
