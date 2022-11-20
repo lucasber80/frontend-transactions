@@ -1,0 +1,16 @@
+.radio-button {
+  width: 150px;
+}
+.input-box input {
+  outline: 0;
+  border-width: 0 0 2px;
+}
+.input-box input:focus {
+  border-color: black;
+}
+
+.input-box label {
+  font-weight: 500;
+  font-size: small;
+  margin-bottom: 1px;
+}

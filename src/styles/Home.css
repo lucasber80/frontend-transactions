@@ -1,5 +1,5 @@
 .account-box {
-  width: 300px;
+  width: 250px;
   height: 110px;
   background-color: white;
   border-radius: 20px;
@@ -65,4 +65,9 @@
   font-weight: 500;
   font-size: small;
   margin-bottom: 1px;
+}
+
+.logout-button{
+  border: none;
+  background-color: transparent;
 }

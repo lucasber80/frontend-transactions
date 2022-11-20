@@ -33,7 +33,7 @@ function SignUp() {
           if (error.response.data == "email already in use") {
             SetEmailMsg("o e-mail já esta em uso");
           } else {
-            SetErrorMsg("Houve um erro ao tentar realizar o login");
+            SetErrorMsg("Houve um erro ao tentar realizar o cadastro");
           }
         });
     } else {
